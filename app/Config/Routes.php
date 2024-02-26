@@ -10,7 +10,9 @@ $routes->group('', static function ($routes) {
     $routes->group('', ['filter' => 'cifilter:auth'], static function ($routes) {
         $routes->get('home', 'AdminController::index', ['as' => 'admin.home']);
         $routes->get('logout', 'AdminController::logoutHandler', ['as' => 'admin.logout']);
-        //! Kategori
+        //! User
+        $routes->get('users', 'AdminController::users', ['as' => 'users']);
+        //! Category
         $routes->get('categories', 'AdminController::categories', ['as' => 'categories']);
         $routes->post('add-category', 'AdminController::addCategory', ['as' => 'add-category']);
         $routes->get('get-categories', 'AdminController::getCategories', ['as' => 'get-categories']);

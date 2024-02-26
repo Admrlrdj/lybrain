@@ -25,4 +25,22 @@ class AdminController extends BaseController
         CIAuth::forget();
         return redirect()->route('admin.login.form')->with('fail', "You're logged out!");
     }
+
+    public function users()
+    {
+        $data = [
+            'tabTitle' => 'Users',
+        ];
+
+        return view('template/pages/user', $data);
+    }
+
+    public function categories()
+    {
+        $data = [
+            'tabTitle' => 'Categories',
+        ];
+
+        return view('template/pages/category', $data);
+    }
 }

@@ -15,44 +15,34 @@
                         <span class="micon dw dw-home"></span><span class="mtext">Home</span>
                     </a>
                 </li>
+                <?php if (get_user()->level === "admin") : ?>
+                    <li>
+                        <a href="<?= route_to('users'); ?>" class="dropdown-toggle no-arrow <?= $tabTitle === "Users" ? 'active' : '' ?>">
+                            <span class="micon dw dw-user2"></span><span class="mtext">Users</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <li>
+                    <a href="<?= route_to('publishers'); ?>" class="dropdown-toggle no-arrow <?= $tabTitle === "Publishers" ? 'active' : '' ?>">
+                        <span class="micon dw dw-list"></span><span class="mtext">Publishers</span>
+                    </a>
+                </li>
                 <li>
                     <a href="<?= route_to('categories'); ?>" class="dropdown-toggle no-arrow <?= $tabTitle === "Categories" ? 'active' : '' ?>">
                         <span class="micon dw dw-list"></span><span class="mtext">Categories</span>
                     </a>
                 </li>
-                <?php if (get_user()->level === "admin") : ?>
-                    <li>
-                        <a href="<?= route_to('categories'); ?>" class="dropdown-toggle no-arrow <?= $tabTitle === "Categories" ? 'active' : '' ?>">
-                            <span class="micon dw dw-list"></span><span class="mtext">User</span>
-                        </a>
-                    </li>
-                <?php endif; ?>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-newspaper"></span><span class="mtext">Posts</span>
+                        <span class="micon dw dw-newspaper"></span><span class="mtext">Books</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="<?= route_to('all-posts') ?>" class="dropdown-toggle no-arrow <?= $tabTitle === "All Post" ? 'active' : '' ?>">All Posts</a></li>
-                        <li><a href=" <?= route_to('new-post') ?>" class="dropdown-toggle no-arrow <?= $tabTitle === "Add New Post" ? 'active' : '' ?>">Add new</a></li>
+                        <li><a href="<?= route_to('all-books') ?>" class="dropdown-toggle no-arrow <?= $tabTitle === "All Books" ? 'active' : '' ?>">All Books</a></li>
+                        <li><a href=" <?= route_to('new-book') ?>" class="dropdown-toggle no-arrow <?= $tabTitle === "Add New Book" ? 'active' : '' ?>">Add New</a></li>
                     </ul>
                 </li>
                 <li>
                     <div class="dropdown-divider"></div>
-                </li>
-                <li>
-                    <div class="sidebar-small-cap">Settings</div>
-                </li>
-                <li>
-                    <a href="<?= route_to('admin.profile'); ?>" class="dropdown-toggle no-arrow <?= $tabTitle === "Profile" ? 'active' : '' ?>">
-                        <span class="micon dw dw-user"></span>
-                        <span class="mtext">Profile</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?= route_to('settings') ?>" class="dropdown-toggle no-arrow <?= $tabTitle === "Settings" ? 'active' : '' ?>">
-                        <span class="micon dw dw-settings"></span>
-                        <span class="mtext">Settings</span>
-                    </a>
                 </li>
             </ul>
         </div>
